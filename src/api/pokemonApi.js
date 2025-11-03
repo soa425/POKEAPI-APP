@@ -72,3 +72,10 @@ export const loadAllPokemonKoNames = async (limit = 151) => {
 
 // 6. 캐시된 이름 데이터에 접근하는 함수
 export const getKoNameCache = () => pokemonKoNameCache;
+
+
+export const getPokemonData = async () => {
+  const response = await fetch(`${process.env.REACT_APP_API}/pokemon/1`);
+  const data = await response.json();
+  return data;
+};
